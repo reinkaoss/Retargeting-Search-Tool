@@ -1,4 +1,135 @@
 .card {
     margin-bottom: 20px;
+    width: 250px;
+    height: 350px;
+    border-radius: 16px;
+    background: #17141f;
+    box-shadow: -1rem 0 3rem #000;
+    transition: transform 0.9s ease;
+    color: aliceblue;
   }
+
+#campaigns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
   
+  body {
+    background-image: linear-gradient(to left top,#ea5a1c,#015cb3);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.headerTitle {
+    background-color: initial;
+    display: flex;
+    justify-content: center;
+    color: #eee;
+}
+.search {
+  margin: 0 auto;
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 5px;
+    width: 60%;
+}
+
+.search-1 {
+    position: relative;
+    width: 50%
+}
+
+.search-1 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 34px;
+    padding-right: 10px;
+    border-right: 2px solid #eee
+}
+
+.search-1 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-1 i {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    font-size: 24px;
+    color: #eee
+}
+
+::placeholder {
+    color: #eee;
+    opacity: 1
+}
+
+.search-2 {
+    position: relative;
+    width: 100%
+}
+
+.search-2 input {
+    height: 45px;
+    border: none;
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 100px
+}
+
+.search-2 input:focus {
+    border-color: none;
+    box-shadow: none;
+    outline: none
+}
+
+.search-2 i {
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    font-size: 24px;
+    color: #eee
+}
+
+.search-2 button {
+    position: absolute;
+    right: 1px;
+    top: 0px;
+    border: none;
+    height: 45px;
+    background-color: rgb(76, 61, 61);
+    color: #fff;
+    width: 90px;
+    border-radius: 4px
+}
+
+.searchRow {
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width:800px) {
+    .search-1 input {
+        border-right: none;
+        border-bottom: 1px solid #eee
+    }
+
+    .search-2 i {
+        left: 4px
+    }
+
+    .search-2 input {
+        padding-left: 34px
+    }
+
+    .search-2 button {
+        height: 37px;
+        top: 5px
+    }
+}

@@ -10,21 +10,31 @@
     </head>
     <body>
       <div class="container">
-        <h1 class="text-center">Ad Campaigns</h1>
+        <h1 class="text-center">Google Retargeting Campaigns 2022/23</h1>
         <div class="form-group">
-          <label for="companyFilter">Filter by Company:</label>
-          <select class="form-control" id="companyFilter">
+          <!-- <select class="form-control" id="companyFilter">
+            <option value="all">All</option>
+            <option value="RATE">RATE</option>
+            <option value="RMA">RMA</option>
+          </select> -->
+          <form>
+            <div class="form-group">
+                <label for="searchField">Search by Company Name</label>
+                <!-- <input type="text" class="form-control" id="searchField">
+                <button type="button" id="searchButton">Search</button> -->
+            </div>
+        </form>
+
+        <div class="container"> <div class="search"> <div class="row searchRow"> 
+          <select class="form-control search-1" id="companyFilter">
             <option value="all">All</option>
             <option value="RATE">RATE</option>
             <option value="RMA">RMA</option>
           </select>
-          <form>
-            <div class="form-group">
-                <label for="searchField">Search by Company Name</label>
-                <input type="text" class="form-control" id="searchField">
-                <button type="button" id="searchButton">Search</button>
-            </div>
-        </form>
+          <!-- <div class="col-md-6"> <div class="search-1 "> <i class='bx bx-search-alt'></i> <input type="text" placeholder="RATE/RMA"> </div> </div> <div class="col-md-6">  -->
+          <div> 
+          <div class="search-2"> <i class='bx bxs-map' ></i> <input id="searchField" type="text" placeholder="Deutsche Bank"> <button type="button" id="searchButton">Search</button> </div> </div> </div> </div> </div>
+</div>
         
         </div>
         <div id="campaigns"></div>
