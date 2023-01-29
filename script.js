@@ -844,7 +844,7 @@ let data = [
   
     // Filter data based on user input
     let filteredData = data;
-    if (selectedtype !== "ALL") {
+    if (selectedtype !== null) {
       filteredData = filteredData.filter(function(item) {
         console.log(filteredData);
         return item.type === selectedtype;
@@ -868,23 +868,26 @@ let data = [
       let card = document.createElement("div");
       card.classList.add("card");
   
+
+      let progress = (item.impressions / item.neededImpressions) * 100;
       // Create card content
       let cardContent = `
         <div class="card-body">
           <h5 class="card-title">${item.company}</h5>
+          <h6 class="card-title"><span style="color: ${item.type === "RATE" ? '#015cb3' : '#ea5a1c'}">${item.campaignName}</span></h6>
           <p class="card-text">
-            <strong>startDate:</strong> ${item.startDate}<br>
-            <strong>endDate:</strong> ${item.endDate}<br>
-            <strong>impressions:</strong> ${item.impressions}<br>
+            <strong>Start Date:</strong> ${item.startDate}<br>
+            <strong>End Date:</strong> ${item.endDate}<br>
+            <strong>Impressions:</strong> ${item.impressions}<br>
             <strong>Audience:</strong> ${item.audience}<br>
-            <strong>clicks:</strong> ${item.clicks}<br>
-            <strong>neededImpressions:</strong> ${item.neededImpressions}<br>
+            <strong>Clicks:</strong> ${item.clicks}<br>
+            <strong>Needed Impressions:</strong> ${item.neededImpressions}<br>
             <div class="progress">
-  <div class="progress-bar bg-success" role="progressbar" style="width: ${(JSON.stringify(item.impressions / item.neededImpressions) * 100).toFixed(2)}%" aria-valuenow="${(JSON.stringify(item.impressions / item.neededImpressions) * 100).toFixed(2)}" aria-valuemin="0" aria-valuemax="100"><strong>${(JSON.stringify(item.impressions / item.neededImpressions) * 100).toFixed(2)}%</strong %</div>
+  <div class="progress-bar ${progress < 98 ? 'bg-danger' : 'bg-success'} bg-success progressBar" role="progressbar" style="width: ${(JSON.stringify(item.impressions / item.neededImpressions) * 100).toFixed(2)}%" aria-valuenow="${(JSON.stringify(item.impressions / item.neededImpressions) * 100).toFixed(2)}" aria-valuemin="0" aria-valuemax="100"><strong>${(JSON.stringify(item.impressions / item.neededImpressions) * 100).toFixed(2)}%</strong %</div>
 </div>
             </p>
           </div>
-        `;
+        `
         card.innerHTML = cardContent;
     
         // Append card to cards container
